@@ -1,9 +1,12 @@
 import React from 'react';
+import HomeBanner from './HomeBanner/HomeBanner';
+import FriendSection from '../FriendSection/FriendSection';
 
 const Home = () => {
     return (
         <div>
-            <h1>Home Page</h1>
+            <HomeBanner />
+            <FriendSection />
         </div>
     );
 };
