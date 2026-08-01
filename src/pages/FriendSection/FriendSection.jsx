@@ -124,7 +124,67 @@ const FriendSection = () => {
     "bio": "A work friend who loves traveling, photography, and discovering local food.",
     "goal": 14,
     "next_due_date": "2026-08-01"
-  }
+  },
+  {
+  "id": 11,
+  "name": "Noah Clark",
+  "picture": "https://i.pravatar.cc/300?img=14",
+  "email": "noah.clark@example.com",
+  "days_since_contact": 6,
+  "status": "on-track",
+  "tags": ["gym", "college"],
+  "bio": "A longtime friend who enjoys fitness, football, and weekend adventures.",
+  "goal": 14,
+  "next_due_date": "2026-08-09"
+},
+{
+  "id": 12,
+  "name": "Ava Lewis",
+  "picture": "https://i.pravatar.cc/300?img=25",
+  "email": "ava.lewis@example.com",
+  "days_since_contact": 12,
+  "status": "almost due",
+  "tags": ["work", "close friend"],
+  "bio": "A close colleague who enjoys painting, coffee, and exploring new places.",
+  "goal": 14,
+  "next_due_date": "2026-08-03"
+},
+{
+  "id": 13,
+  "name": "Lucas Walker",
+  "picture": "https://i.pravatar.cc/300?img=15",
+  "email": "lucas.walker@example.com",
+  "days_since_contact": 19,
+  "status": "overdue",
+  "tags": ["childhood", "sports"],
+  "bio": "A childhood friend who loves basketball, gaming, and outdoor activities.",
+  "goal": 14,
+  "next_due_date": "2026-07-27"
+},
+{
+  "id": 14,
+  "name": "Isabella Hall",
+  "picture": "https://i.pravatar.cc/300?img=45",
+  "email": "isabella.hall@example.com",
+  "days_since_contact": 10,
+  "status": "almost due",
+  "tags": ["university", "travel"],
+  "bio": "A university friend who enjoys traveling, photography, and discovering local cafés.",
+  "goal": 14,
+  "next_due_date": "2026-08-05"
+},
+{
+  "id": 15,
+  "name": "Henry Young",
+  "picture": "https://i.pravatar.cc/300?img=52",
+  "email": "henry.young@example.com",
+  "days_since_contact": 4,
+  "status": "on-track",
+  "tags": ["work", "friend"],
+  "bio": "A friendly coworker who enjoys cycling, movies, and trying new restaurants.",
+  "goal": 14,
+  "next_due_date": "2026-08-11"
+}
 ]
     
     return (

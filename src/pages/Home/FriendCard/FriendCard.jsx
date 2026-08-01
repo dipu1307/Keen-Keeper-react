@@ -5,10 +5,10 @@ import { CalendarDays } from 'lucide-react';
 const FriendCard = ({friend}) => {
     const {id, name, picture, days_since_contact,status,tags}=friend;
     const statusStyle ={
-        overdue: 'bg-red-500 text-white',
-        onTrack: 'bg-green-500 text-white',
-        almostDue: 'bg-yellow-500 text-black'
-    }
+        "overdue": 'bg-red-500 text-white',
+        "onTrack": 'bg-green-500 text-white',
+        "almostDue": 'bg-yellow-500 text-black'
+    };
     return (
         <div>
             <Link
@@ -48,7 +48,7 @@ const FriendCard = ({friend}) => {
 
         <div className="mt-2">
           <span
-            className={`badge ${statusStyle[status]}`}
+            
           >
             {status}
           </span>
