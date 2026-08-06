@@ -4,11 +4,11 @@ import { CalendarDays } from 'lucide-react';
 
 const FriendCard = ({friend}) => {
     const {id, name, picture, days_since_contact,status,tags}=friend;
-    const statusStyle ={
-        "overdue": 'bg-red-500 text-white',
-        "onTrack": 'bg-green-500 text-white',
-        "almostDue": 'bg-yellow-500 text-black'
-    };
+    const statusStyle = {
+  overdue: "bg-red-500 text-white",
+  "on-track": "bg-green-500 text-white",
+  "almost due": "bg-yellow-500 text-black",
+};
     return (
         <div>
             <Link
@@ -19,11 +19,11 @@ const FriendCard = ({friend}) => {
         <img
           src={picture}
           alt={name}
-          className="w-full h-52 object-cover rounded-xl"
+          className="w-80 h-80 rounded-full object-cover"
         />
       </figure>
 
-      <div className="card-body">
+      <div className="card-body items-center">
         <h2 className="card-title">
           {name}
         </h2>
@@ -39,7 +39,7 @@ const FriendCard = ({friend}) => {
           {tags.map((tag) => (
             <span
               key={tag}
-              className="badge badge-outline"
+              className="px-2 py-1 rounded-full bg-green-100 text-green-700 text-sm"
             >
               {tag}
             </span>
@@ -47,9 +47,7 @@ const FriendCard = ({friend}) => {
         </div>
 
         <div className="mt-2">
-          <span
-            
-          >
+          <span className={`badge ${statusStyle[status]}`}>
             {status}
           </span>
         </div>
