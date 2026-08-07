@@ -1,13 +1,26 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useParams } from 'react-router-dom';
+import { toast } from "react-toastify";
 import { Archive, Bell, MessageSquare, PhoneCall, Trash2, Video } from 'lucide-react';
 import friendsData from "../../data/friends.json";
+import { InteractionContext } from '../../components/Context/InteractionProvider';
+
 
 const FriendDetails = () => {
 
     const {id} = useParams();
+    const {addInteraction} = useContext(InteractionContext);
+    
     // console.log(id);
     const friend = friendsData.find((friend)=>friend.id === parseInt(id));
+
+    const handleAddInteraction = (type) =>{
+
+      console.log("Adding interaction of type:", type, "for friend:", friend);
+      addInteraction(friend, type);
+      toast.success(`${type} with ${friend.name} added to timeline!`);
+
+    }
 
     console.log(friend);
 
@@ -20,6 +33,7 @@ const FriendDetails = () => {
       </div>
     );
   }
+  
 
   
     return (
@@ -131,17 +145,17 @@ const FriendDetails = () => {
               <h2 className="text-sm font-bold text-[#1e4a38] mb-3">Quick Check-In</h2>
 
               <div className="grid grid-cols-3 gap-3">
-                <button className="btn btn-ghost border border-gray-100 bg-[#f8fafb] hover:bg-gray-100 h-20 flex-col gap-1 normal-case">
+                <button onClick={()=>handleAddInteraction("Call")}  className="btn btn-ghost border border-gray-100 bg-[#f8fafb] hover:bg-gray-100 h-20 flex-col gap-1 normal-case">
                   <PhoneCall size={18} className="text-gray-700" />
                   <span className="text-xs font-medium text-gray-700">Call</span>
                 </button>
 
-                <button className="btn btn-ghost border border-gray-100 bg-[#f8fafb] hover:bg-gray-100 h-20 flex-col gap-1 normal-case">
+                <button onClick={()=>handleAddInteraction("Text")} className="btn btn-ghost border border-gray-100 bg-[#f8fafb] hover:bg-gray-100 h-20 flex-col gap-1 normal-case">
                   <MessageSquare size={18} className="text-gray-700" />
                   <span className="text-xs font-medium text-gray-700">Text</span>
                 </button>
 
-                <button className="btn btn-ghost border border-gray-100 bg-[#f8fafb] hover:bg-gray-100 h-20 flex-col gap-1 normal-case">
+                <button onClick={()=>handleAddInteraction("Video")} className="btn btn-ghost border border-gray-100 bg-[#f8fafb] hover:bg-gray-100 h-20 flex-col gap-1 normal-case">
                   <Video size={18} className="text-gray-700" />
                   <span className="text-xs font-medium text-gray-700">Video</span>
                 </button>
